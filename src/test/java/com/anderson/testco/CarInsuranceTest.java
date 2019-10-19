@@ -1,6 +1,7 @@
 package com.anderson.testco;
 
 import com.anderson.testco.entities.Product;
+import com.anderson.testco.insurance.CarInsurance;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

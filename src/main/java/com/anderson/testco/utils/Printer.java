@@ -1,4 +1,4 @@
-package com.anderson.testco;
+package com.anderson.testco.utils;
 
 import com.anderson.testco.entities.Product;
 

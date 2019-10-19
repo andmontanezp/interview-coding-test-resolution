@@ -1,6 +1,8 @@
 package com.anderson.testco;
 
 import com.anderson.testco.entities.Product;
+import com.anderson.testco.insurance.CarInsurance;
+import com.anderson.testco.utils.Printer;
 
 public class Main {
     public static void main(String[] args) {
@@ -17,8 +19,8 @@ public class Main {
         };
 
         System.out.println(String.format("-------- day %d --------", 0));
-        new Printer(new CarInsurance(products).getProducts()).print();
         System.out.println("name, sellIn, price");
+        new Printer(new CarInsurance(products).getProducts()).print();
         System.out.println();
 
         for (int i = 1; i <= 30; i++) {
