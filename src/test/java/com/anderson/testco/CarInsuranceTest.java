@@ -98,14 +98,28 @@ public class CarInsuranceTest {
     @Test
     public void givenProduct_WhenIsSpecialFullCoverage_AndSellinIsHigherThan10Days_ShouldBehaveLikeFullCoverage() {
         carInsurance = new CarInsurance(new Product[]{
-                new Product("Special Full Coverage", 15, 20)
+                new Product("Special Full Coverage", 11, 24)
         });
 
         Product[] products = carInsurance.updatePrice();
 
         assertThat(products.length, is(1));
 
-        assertThat(products[0].getSellIn(), is(14));
-        assertThat(products[0].getPrice(), is(21));
+        assertThat(products[0].getSellIn(), is(10));
+        assertThat(products[0].getPrice(), is(25));
+    }
+
+    @Test
+    public void givenProduct_WhenIsSpecialFullCoverage_AndSellinIs10DaysOrLower_ShouldDoubleIncreasePrice() {
+        carInsurance = new CarInsurance(new Product[]{
+                new Product("Special Full Coverage", 10, 25)
+        });
+
+        Product[] products = carInsurance.updatePrice();
+
+        assertThat(products.length, is(1));
+
+        assertThat(products[0].getSellIn(), is(9));
+        assertThat(products[0].getPrice(), is(27));
     }
 }
