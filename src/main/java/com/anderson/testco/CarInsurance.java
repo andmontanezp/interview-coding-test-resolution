@@ -19,6 +19,7 @@ public class CarInsurance {
 
             if ("Special Full Coverage".equals(product.getName())) {
                 product.increasePrice();
+
                 if (product.getSellIn() < 10 && product.getSellIn() >= 5) {
                     product.increasePrice();
                 } else if (product.getSellIn() < 5){

@@ -136,4 +136,18 @@ public class CarInsuranceTest {
         assertThat(products[0].getSellIn(), is(4));
         assertThat(products[0].getPrice(), is(38));
     }
+
+    @Test
+    public void givenProduct_WhenIsSpecialFullCoverage_AndSellinIsNegative_ShouldInvalidateProduct() {
+        carInsurance = new CarInsurance(new Product[]{
+                new Product("Special Full Coverage", 0, 50)
+        });
+
+        Product[] products = carInsurance.updatePrice();
+
+        assertThat(products.length, is(1));
+
+        assertThat(products[0].getSellIn(), is(-1));
+        assertThat(products[0].getPrice(), is(0));
+    }
 }
