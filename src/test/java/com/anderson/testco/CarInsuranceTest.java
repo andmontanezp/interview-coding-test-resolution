@@ -123,3 +123,12 @@ public class CarInsuranceTest {
         assertThat(products[0].getPrice(), is(27));
     }
 }
+
+//if (product.getSellIn() <= 10 && product.getSellIn() > 5) {
+//                    product.increasePrice();
+//                } else if (product.getSellIn() <= 5 && product.getSellIn() >= 0){
+//                    product.increasePrice();
+//                    product.increasePrice();
+//                } else {
+//                    product.invalidateProduct();
+//                }
