@@ -68,4 +68,17 @@ public class CarInsuranceTest {
         assertThat(products[0].getSellIn(), is(-1));
         assertThat(products[0].getPrice(), is(3));
     }
+
+    @Test
+    public void givenProduct_WhenUpdatePrice_ShouldNeverBeHigherThan50() {
+        carInsurance = new CarInsurance(new Product[]{
+                new Product("Full Coverage", 0, 50)
+        });
+
+        Product[] products = carInsurance.updatePrice();
+        assertThat(products.length, is(1));
+
+        assertThat(products[0].getSellIn(), is(-1));
+        assertThat(products[0].getPrice(), is(50));
+    }
 }
