@@ -122,13 +122,18 @@ public class CarInsuranceTest {
         assertThat(products[0].getSellIn(), is(9));
         assertThat(products[0].getPrice(), is(27));
     }
-}
 
-//if (product.getSellIn() <= 10 && product.getSellIn() > 5) {
-//                    product.increasePrice();
-//                } else if (product.getSellIn() <= 5 && product.getSellIn() >= 0){
-//                    product.increasePrice();
-//                    product.increasePrice();
-//                } else {
-//                    product.invalidateProduct();
-//                }
+    @Test
+    public void givenProduct_WhenIsSpecialFullCoverage_AndSellinIs5DaysOrLower_ShouldTripleIncreasePrice() {
+        carInsurance = new CarInsurance(new Product[]{
+                new Product("Special Full Coverage", 5, 35)
+        });
+
+        Product[] products = carInsurance.updatePrice();
+
+        assertThat(products.length, is(1));
+
+        assertThat(products[0].getSellIn(), is(4));
+        assertThat(products[0].getPrice(), is(38));
+    }
+}
