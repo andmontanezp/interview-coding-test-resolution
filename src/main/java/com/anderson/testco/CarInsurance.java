@@ -11,6 +11,10 @@ public class CarInsurance {
 
     public Product[] updatePrice() {
         for (Product product: this.products) {
+            if ("Mega Coverage".equals(product.getName())) {
+                continue;
+            }
+
             product.decreaseSellIn();
 
             if ("Full Coverage".equals(product.getName())) {
