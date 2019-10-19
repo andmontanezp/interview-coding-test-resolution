@@ -32,6 +32,10 @@ public class Product {
     }
 
     public void decreasePrice() {
+        if ((this.price - 1) <= 0) {
+            this.price = 0;
+            return;
+        }
         this.price = this.price - 1;
     }
 
