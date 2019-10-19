@@ -40,6 +40,10 @@ public class Product {
     }
 
     public void increasePrice() {
+        if((this.price + 1) > 50) {
+            this.price = 50;
+            return;
+        }
         this.price = this.price + 1;
     }
 
