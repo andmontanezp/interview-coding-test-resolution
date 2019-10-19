@@ -151,4 +151,11 @@ public class CarInsuranceTest {
         assertThat(products[0].getSellIn(), is(-1));
         assertThat(products[0].getPrice(), is(0));
     }
+
+    @Test
+    public void xxx() {
+        carInsurance = new CarInsurance(new Product[]{
+                new Product("Special Full Coverage", 0, 50)
+        });
+    }
 }
