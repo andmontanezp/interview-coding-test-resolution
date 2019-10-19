@@ -37,6 +37,9 @@ public class CarInsurance {
 
             if ("Full Coverage".equals(product.getName())) {
                 product.increasePrice();
+                if (product.sellByDateHasPassed()) {
+                    product.increasePrice();
+                }
                 continue;
             }
 
