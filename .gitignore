@@ -22,3 +22,5 @@ Icon
 
 *.iml
 .idea
+.gradle/
+build
