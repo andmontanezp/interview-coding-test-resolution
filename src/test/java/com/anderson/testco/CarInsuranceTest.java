@@ -1,7 +1,6 @@
 package com.anderson.testco;
 
 import com.anderson.testco.entities.Product;
-import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,12 +20,12 @@ public class CarInsuranceTest {
     @Test
     public void givenProductList_ByEOD_SellInAndPriceShouldLowers() {
         carInsurance = new CarInsurance(new Product[]{
-                new Product("Medium Coverage", 10, 20),
-                new Product("Medium Coverage", 20, 10)
+                new Product("Medium Coverage", 10, 20)
         });
 
         Product[] products = carInsurance.updatePrice();
-        assertThat(products.length, is(2));
+        assertThat(products.length, is(1));
+
         assertThat(products[0].getSellIn(), is(9));
         assertThat(products[0].getPrice(), is(19));
     }

@@ -23,6 +23,14 @@ public class Product {
         return price;
     }
 
+    public void decreaseSellIn() {
+        this.sellIn = this.sellIn - 1;
+    }
+
+    public void decreasePrice() {
+        this.price = this.price - 1;
+    }
+
     @Override
     public String toString() {
         return String.format("%s, %d, %d", this.getName(), this.getSellIn(), this.getPrice());

@@ -10,6 +10,10 @@ public class CarInsurance {
     }
 
     public Product[] updatePrice() {
+        for (Product product: this.products) {
+            product.decreaseSellIn();
+            product.decreasePrice();
+        }
         return products;
     }
 
