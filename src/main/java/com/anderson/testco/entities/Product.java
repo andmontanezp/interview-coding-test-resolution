@@ -39,6 +39,10 @@ public class Product {
         this.price = this.price - 1;
     }
 
+    public void increasePrice() {
+        this.price = this.price + 1;
+    }
+
     @Override
     public String toString() {
         return String.format("%s, %d, %d", this.getName(), this.getSellIn(), this.getPrice());
