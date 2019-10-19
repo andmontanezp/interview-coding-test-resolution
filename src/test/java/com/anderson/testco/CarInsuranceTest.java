@@ -42,4 +42,17 @@ public class CarInsuranceTest {
         assertThat(products[0].getSellIn(), is(-1));
         assertThat(products[0].getPrice(), is(18));
     }
+
+   @Test
+   public void givenProduct_WhenUpdatePrice_PriceShouldNeverBeNegative() {
+       carInsurance = new CarInsurance(new Product[]{
+               new Product("Medium Coverage", 0, 0)
+       });
+
+       Product[] products = carInsurance.updatePrice();
+       assertThat(products.length, is(1));
+
+       assertThat(products[0].getSellIn(), is(-1));
+       assertThat(products[0].getPrice(), is(0));
+   }
 }
