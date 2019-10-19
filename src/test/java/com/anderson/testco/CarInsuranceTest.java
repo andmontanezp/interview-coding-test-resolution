@@ -81,4 +81,17 @@ public class CarInsuranceTest {
         assertThat(products[0].getSellIn(), is(-1));
         assertThat(products[0].getPrice(), is(50));
     }
+
+    @Test
+    public void givenProduct_WhenIsMegaCoverage_ShouldNotBeChangedAtAll() {
+        carInsurance = new CarInsurance(new Product[]{
+                new Product("Mega Coverage", 0, 80)
+        });
+
+        Product[] products = carInsurance.updatePrice();
+        assertThat(products.length, is(1));
+
+        assertThat(products[0].getSellIn(), is(0));
+        assertThat(products[0].getPrice(), is(80));
+    }
 }
