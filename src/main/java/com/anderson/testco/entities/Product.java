@@ -23,6 +23,10 @@ public class Product {
         return price;
     }
 
+    public boolean sellByDateHasPassed() {
+        return this.sellIn < 0;
+    }
+
     public void decreaseSellIn() {
         this.sellIn = this.sellIn - 1;
     }

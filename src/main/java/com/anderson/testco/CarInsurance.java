@@ -13,6 +13,10 @@ public class CarInsurance {
         for (Product product: this.products) {
             product.decreaseSellIn();
             product.decreasePrice();
+
+            if (product.sellByDateHasPassed()) {
+                product.decreasePrice();
+            }
         }
         return products;
     }

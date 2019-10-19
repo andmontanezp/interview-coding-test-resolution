@@ -29,4 +29,17 @@ public class CarInsuranceTest {
         assertThat(products[0].getSellIn(), is(9));
         assertThat(products[0].getPrice(), is(19));
     }
+
+    @Test
+    public void givenProductList_WhenSellByDateHasPassed_PriceShouldDegradesTwiceFaster() {
+        carInsurance = new CarInsurance(new Product[]{
+                new Product("Medium Coverage", 0, 20)
+        });
+
+        Product[] products = carInsurance.updatePrice();
+        assertThat(products.length, is(1));
+
+        assertThat(products[0].getSellIn(), is(-1));
+        assertThat(products[0].getPrice(), is(18));
+    }
 }
