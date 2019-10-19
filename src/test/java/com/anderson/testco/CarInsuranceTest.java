@@ -55,4 +55,17 @@ public class CarInsuranceTest {
        assertThat(products[0].getSellIn(), is(-1));
        assertThat(products[0].getPrice(), is(0));
    }
+
+    @Test
+    public void givenProduct_WhenIsFullCoverage_ShouldIncreaseInPriceAsItGetsOlder() {
+        carInsurance = new CarInsurance(new Product[]{
+                new Product("Full Coverage", 0, 2)
+        });
+
+        Product[] products = carInsurance.updatePrice();
+        assertThat(products.length, is(1));
+
+        assertThat(products[0].getSellIn(), is(-1));
+        assertThat(products[0].getPrice(), is(3));
+    }
 }
