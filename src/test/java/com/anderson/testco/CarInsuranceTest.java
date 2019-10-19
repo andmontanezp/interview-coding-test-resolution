@@ -66,7 +66,7 @@ public class CarInsuranceTest {
         assertThat(products.length, is(1));
 
         assertThat(products[0].getSellIn(), is(-1));
-        assertThat(products[0].getPrice(), is(3));
+        assertThat(products[0].getPrice(), is(4));
     }
 
     @Test

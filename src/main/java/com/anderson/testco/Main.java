@@ -16,13 +16,13 @@ public class Main {
                 new Product("Super Sale", 3, 6)
         };
 
-        System.out.println(String.format("Day %d", 0));
+        System.out.println(String.format("-------- day %d --------", 0));
         new Printer(new CarInsurance(products).getProducts()).print();
         System.out.println("name, sellIn, price");
         System.out.println();
 
         for (int i = 1; i <= 30; i++) {
-            System.out.println(String.format("Day %d", i));
+            System.out.println(String.format("-------- day %d --------", i));
             System.out.println("name, sellIn, price");
             new Printer(new CarInsurance(products).updatePrice()).print();
             System.out.println();
